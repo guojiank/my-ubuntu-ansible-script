@@ -9,3 +9,13 @@
 - nodejs
 - openjdk13
 - ansible
+- git
+
+## todo list
+- pip link to pip3
+- python link to python3
+- pip proxy
+- docker 阿里镜像源
+- git edit vim
+- git email and username
+
