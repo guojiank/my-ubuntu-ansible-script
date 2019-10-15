@@ -1,0 +1,50 @@
+- name: delete old docker version
+  apt:
+    name:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+    state: absent
+
+- name: install base software
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg-agent
+      - software-properties-common
+    state: present
+
+- name: get gpg
+  get_url:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    dest: /tmp/
+    mode: 0755
+
+- name: install gpg
+  shell: apt-key add /tmp/gpg
+
+
+- name: add apt repository
+  shell: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+- name: update ubuntu
+  apt:
+    update_cache: yes
+
+- name: install docker-ce
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: latest
+
+- name: start docker-ce
+  systemd:
+    name: docker
+    state: started
+    enabled: yes
