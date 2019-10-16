@@ -1,0 +1,31 @@
+- name: 创建解压目录
+  file: 
+    path: /usr/bin/v2ray
+    state: directory
+
+- name: 解压v2ray安装包
+  unarchive:
+    src: v2ray-linux-64.zip
+    dest: /usr/bin/v2ray/
+
+- name: 创建配置文件目录
+  file:
+    path: /etc/v2ray
+    state: directory
+
+- name: 设置配置文件
+  copy:
+    src: config.json
+    dest: /etc/v2ray/config.json
+
+- name: 设置服务
+  file:
+    src: /usr/bin/v2ray/systemd/v2ray.service
+    path: /etc/systemd/system/v2ray.service
+    state: link
+  
+- name: start v2ray
+  systemd:
+    name: v2ray
+    state: restarted
+    enabled: yes

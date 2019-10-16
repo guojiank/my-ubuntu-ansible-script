@@ -10,9 +10,12 @@
 - openjdk13
 - ansible
 - git
+- proxychains4
 
 ## todo list
 - pip proxy
-- git edit vim
-- git email and username
+- openjdk13
+- nodejs
+- yarn
+- yarn 阿里 proxy
 

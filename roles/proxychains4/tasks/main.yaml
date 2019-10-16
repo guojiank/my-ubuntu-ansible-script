@@ -1,0 +1,9 @@
+- name: proxychains4
+  apt:
+    name: proxychains4
+    state: latest
+
+- name: 配置
+  copy:
+    src: proxychains4.conf
+    dest: /etc/proxychains4.conf

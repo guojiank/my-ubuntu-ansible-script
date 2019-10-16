@@ -16,6 +16,7 @@
       - jq
       - openssl
       - git
+      - unzip
     state: latest
 
 - name: python link to python3
@@ -30,5 +31,13 @@
     path: /usr/bin/pip
     state: link
 
-# - name: pip proxy
+- name: 配置git editor为vim
+  shell: git config --global core.editor vim
+
+- name: 配置git user
+  shell: git config --global user.name "guojiank"
+
+- name: 配置git email
+  shell: git config --global user.email "guojian_k@qq.com"
+
   

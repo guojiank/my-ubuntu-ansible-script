@@ -1,2 +1,2 @@
 [ubuntu]
-47.105.65.35 ansible_ssh_port=22 ansible_ssh_user=root
+localhost ansible_ssh_port=22 ansible_ssh_user=root
