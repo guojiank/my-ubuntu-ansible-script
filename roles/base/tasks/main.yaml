@@ -18,4 +18,17 @@
       - git
     state: latest
 
+- name: python link to python3
+  file:
+    src: /usr/bin/python3
+    path: /usr/bin/python
+    state: link
+  
+- name: pip link to pip3
+  file:
+    src: /usr/bin/pip3
+    path: /usr/bin/pip
+    state: link
 
+# - name: pip proxy
+  

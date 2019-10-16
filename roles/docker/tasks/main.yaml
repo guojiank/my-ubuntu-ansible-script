@@ -43,6 +43,11 @@
       - containerd.io
     state: latest
 
+- name: docker ali mirror
+  copy:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+
 - name: start docker-ce
   systemd:
     name: docker
