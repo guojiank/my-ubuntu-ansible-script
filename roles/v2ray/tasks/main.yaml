@@ -15,8 +15,11 @@
 
 - name: 设置配置文件
   copy:
-    src: config.json
-    dest: /etc/v2ray/config.json
+    src: config.json.aes256
+    dest: /etc/v2ray/config.json.aes256
+
+- name: 解密配置文件
+  shell: openssl enc -d  -in /etc/v2ray/config.json.aes256 -out /etc/v2ray/config.json -aes256 -k {{ v2ray_config_password }}
 
 - name: 设置服务
   file:

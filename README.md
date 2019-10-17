@@ -11,6 +11,10 @@
 - ansible
 - git
 - proxychains4
+- nodejs
+- npm
+- cnpm
+- yarn
 
 # todo list
 - maven ali mirrors
