@@ -1,0 +1,4 @@
+- name: 配置apt镜像源
+  copy:
+    src: sources.list
+    dest: /etc/apt/sources.list

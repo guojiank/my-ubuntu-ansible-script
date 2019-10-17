@@ -6,16 +6,11 @@
 - python3
 - pip3
 - vim
-- nodejs
-- openjdk13
+- openjdk11
+- maven
 - ansible
 - git
 - proxychains4
 
-## todo list
-- pip proxy
-- openjdk13
-- nodejs
-- yarn
-- yarn 阿里 proxy
-
+# todo list
+- maven ali mirrors

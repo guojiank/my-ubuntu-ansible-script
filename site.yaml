@@ -1,5 +1,6 @@
 - hosts: all
   roles:
+    - apt-proxy
     - base
     - docker
     - v2ray

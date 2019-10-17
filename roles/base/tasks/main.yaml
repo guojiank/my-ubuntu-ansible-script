@@ -17,6 +17,8 @@
       - openssl
       - git
       - unzip
+      - openjdk-11-jdk
+      - maven
     state: latest
 
 - name: python link to python3
@@ -40,6 +42,12 @@
   copy:
     src: pip.conf
     dest: /root/.pip/pip.conf
+
+- name: pip安装软件
+  pip:
+    name:
+      - ipython
+    state: latest
 
 - name: 配置git editor为vim
   shell: git config --global core.editor vim
